@@ -1,8 +1,8 @@
 {
     "db":{
         "host":"localhost",
-        "user":"root", // change me
-        "password":"", // change me
-        "database":"CHANGE ME" // change me
+        "user":"root",
+        "password":"", 
+        "database":"todo_list"
     }
 }

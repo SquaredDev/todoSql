@@ -2,10 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>SQL To Do List</title>
   <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-  <h1>Hello, Welcome to {{appType}}!</h1>
+  <h1>Hello, Welcome to your to do list!</h1>
+  <form class="add" action="/" method="post">
+    <input type="text" name="todo" value="">
+    <button type="submit" name="button">Add To Do</button>
+  </form>
+  <h3>Needs to be done:</h3>
+  {{#active}}
+    <form class="done" action="/complete" method="post">
+      <input type="hidden" name="" value="{{id}}">
+      <p>{{todo_item}}</p><button type="submit" name="button">Mark as done</button>
+    </form>
+  {{/active}}
+  <h3>Has been done:</h3>
+  {{#complete}}
+    <form class="hide" action="/deleted" method="post">
+      <input type="hidden" name="" value="{{id}}">
+      <p>{{todo_item}}</p><button type="submit" name="button">Delete Item</button>
+    </form>
+  {{/complete}}
+
 </body>
 </html>
